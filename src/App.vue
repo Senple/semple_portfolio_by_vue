@@ -19,9 +19,15 @@
   text-align: center;
   color: #2c3e50;
 }
+body {
+  background: rgba(194, 229, 252, 0.7);
+}
 
 #nav {
   padding: 30px;
+  display: block;
+  margin: 0 auto;
+  /* position: absolute; */
 }
 
 #nav a {
