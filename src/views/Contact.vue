@@ -30,25 +30,10 @@
           wf_nicomoji:isActive03}"
         >hoge テキスト hoge</div>-->
         <div class="button-row">
-          <el-button
-            type="primary"
-            class="wf_hannari button-size"
-            @click="switchFont(1)"
-            value="1"
-          >しっかり</el-button>
-          <el-button
-            type="primary"
-            class="wf_nikukyu button-size"
-            @click="switchFont(2)"
-            value="2"
-          >にゃーん</el-button>
-          <el-button
-            type="primary"
-            class="wf_nicomoji button-size"
-            @click="switchFont(3)"
-            value="3"
-          >やわらかい</el-button>
-          <el-button type="primary" @click="switchFont(0)" value="0">解除</el-button>
+          <button type="button" class="wf_hannari" @click="switchFont(1)" value="1">しっかり</button>
+          <button type="button" class="wf_nikukyu" @click="switchFont(2)" value="2">にゃーん</button>
+          <button type="button" class="wf_nicomoji" @click="switchFont(3)" value="3">やわらかい</button>
+          <button type="button" @click="switchFont(0)" value="0">解除</button>
         </div>
       </div>
     </section>
@@ -120,9 +105,6 @@
   .button-row {
     display: block;
     width: 100%;
-  }
-  .button-size {
-    /* width: 50%; */
   }
 }
 </style>
