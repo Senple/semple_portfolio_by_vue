@@ -12,6 +12,9 @@
 </template>
 
 <style>
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-vue/src/index.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,5 +40,9 @@ body {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.selector-for-some-widget {
+  box-sizing: content-box;
 }
 </style>
