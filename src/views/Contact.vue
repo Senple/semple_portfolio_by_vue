@@ -11,7 +11,10 @@
         v-bind:class="{wf_hannari:isActive01,
         wf_nikukyu:isActive02,
         wf_nicomoji:isActive03}"
-      >こんにちは、Sempleです。abcdefghijklmnopqrsfndjhaiofhaeAFJCOAED`VJREFHDZCAS</div>
+      >
+        こんにちは、Sempleです。abcdefghijklmnopqr
+        <br />sfndjhaiofhaeAFJCOAED`VJREFHDZCAS
+      </div>
     </section>
 
     <section id="footer" class="sender">
@@ -23,20 +26,12 @@
     </section>
     <section id="option">
       <div class="font">
-        <!-- <div
-          id="hoge"
-          v-bind:class="{wf_hannari:isActive01,
-          wf_nikukyu:isActive02,
-          wf_nicomoji:isActive03}"
-        >hoge テキスト hoge</div>-->
-        <div class="button-row">
-          <b-button-group>
-            <b-button type="button" class="wf_hannari" @click="switchFont(1)" value="1">しっかり</b-button>
-            <b-button type="button" class="wf_nikukyu" @click="switchFont(2)" value="2">にゃーん</b-button>
-            <b-button type="button" class="wf_nicomoji" @click="switchFont(3)" value="3">やわらかい</b-button>
-            <b-button type="button" @click="switchFont(0)" value="0">解除</b-button>
-          </b-button-group>
-        </div>
+        <b-button-group>
+          <b-button type="button" class="wf_hannari" @click="switchFont(1)" value="1">しっかり</b-button>
+          <b-button type="button" class="wf_nikukyu" @click="switchFont(2)" value="2">にゃーん</b-button>
+          <b-button type="button" class="wf_nicomoji" @click="switchFont(3)" value="3">やわらかい</b-button>
+          <b-button type="button" @click="switchFont(0)" value="0">解除</b-button>
+        </b-button-group>
       </div>
     </section>
     <!-- <h1>This is contact page</h1> -->
