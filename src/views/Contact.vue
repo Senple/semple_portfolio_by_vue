@@ -99,10 +99,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .button-row {
-    display: block;
-    width: 100%;
-  }
 }
 </style>
 

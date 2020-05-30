@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <Loading v-show="loading"></Loading>
+    <div id="nav" v-show="!loading">
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>|
       <router-link to="/skill">Skill</router-link>|
@@ -10,6 +11,32 @@
     <router-view />
   </div>
 </template>
+
+<script>
+// CSSで作るローディングページ。
+// https://digipress.info/tech/css-spinner-animation-demo/
+import Loading from "./components/Loading.vue";
+
+export default {
+  name: "app",
+  data() {
+    return {
+      loading: true
+    };
+  },
+  mounted() {
+    console.log("mount start");
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
+    console.log("mounted");
+  },
+  components: {
+    Loading
+    // HelloWorld
+  }
+};
+</script>
 
 <style>
 #app {

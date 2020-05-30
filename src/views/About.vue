@@ -1,25 +1,31 @@
 <template>
-  <div class="about">
-    <p>人生は喜劇だ。</p>
-    <h3>今までの軌跡</h3>
-    <div v-for="topic in history" :key="topic.index">
+  <div id="about">
+    <Loading v-show="loading"></Loading>
+    <div class="about" v-show="!loading">
+      <p>人生は喜劇だ。</p>
+      <h3>今までの軌跡</h3>
+      <div v-for="topic in history" :key="topic.index">
+        <hr />
+        {{ topic.title }}
+        <br />
+        Date: {{ topic.date }}
+        <br />
+        Type: {{ topic.type }}
+        <br />
+        Note:{{ topic.remarks }}
+      </div>
       <hr />
-      {{ topic.title }}
-      <br />
-      Date: {{ topic.date }}
-      <br />
-      Type: {{ topic.type }}
-      <br />
-      Note:{{ topic.remarks }}
     </div>
-    <hr />
   </div>
 </template>
 
 <script>
+import Loading from "../components/Loading.vue";
+
 export default {
   data: function() {
     return {
+      loading: true,
       history: [
         {
           title: "第3回CJKプロジェクト・バングラデシュ派遣",
@@ -44,6 +50,33 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    console.log("mount start");
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
+    console.log("mounted");
+  },
+  components: {
+    Loading
+    // HelloWorld
   }
 };
+
+// CSSで作るローディングページ。
+// https://digipress.info/tech/css-spinner-animation-demo/
+// Vue.component('v-loading', {
+//     props: {
+//         text: {
+//             default: 'サーバ通信中...',
+//             type: String
+//         },
+//         show: {
+//             default: false,
+//             type: Boolean
+//         }
+//     },
+//     template: '<div v-if="show"><img src="https://estatesearch.s3-ap-northeast-1.amazonaws.com/img/ajax-loader.gif" >&nbsp;<span v-text="text"></span></div>'
+// });
 </script>
