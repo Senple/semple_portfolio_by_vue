@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Loading v-show="loading"></Loading>
-    <div id="nav" v-show="!loading">
-      <router-link to="/">Home</router-link>|
+    <!-- <Loading v-show="loading"></Loading> -->
+    <div id="nav">
+      <!-- <router-link to="/">Home</router-link>| -->
       <router-link to="/about">About</router-link>|
       <router-link to="/skill">Skill</router-link>|
       <router-link to="/travel">Travel</router-link>|
@@ -13,29 +13,29 @@
 </template>
 
 <script>
-// CSSで作るローディングページ。
-// https://digipress.info/tech/css-spinner-animation-demo/
-import Loading from "./components/Loading.vue";
+// // CSSで作るローディングページ。
+// // https://digipress.info/tech/css-spinner-animation-demo/
+// import Loading from "./components/Loading.vue";
 
-export default {
-  name: "app",
-  data() {
-    return {
-      loading: true
-    };
-  },
-  mounted() {
-    console.log("mount start");
-    setTimeout(() => {
-      this.loading = false;
-    }, 3000);
-    console.log("mounted");
-  },
-  components: {
-    Loading
-    // HelloWorld
-  }
-};
+// export default {
+//   name: "app",
+//   data() {
+//     return {
+//       loading: true
+//     };
+//   },
+//   mounted() {
+//     console.log("mount start");
+//     setTimeout(() => {
+//       this.loading = false;
+//     }, 3000);
+//     console.log("mounted");
+//   },
+//   components: {
+//     Loading
+//   }
+// };
+//
 </script>
 
 <style>
