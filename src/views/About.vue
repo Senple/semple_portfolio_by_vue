@@ -57,15 +57,14 @@ export default {
       this.loading = false;
     }, 3000);
     console.log("mounted");
+    // this.loading = false;
   },
+
   components: {
     Loading
-    // HelloWorld
   }
 };
 
-// CSSで作るローディングページ。
-// https://digipress.info/tech/css-spinner-animation-demo/
 // Vue.component('v-loading', {
 //     props: {
 //         text: {

@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!-- <Loading v-show="loading"></Loading> -->
     <div id="nav">
-      <!-- <router-link to="/">Home</router-link>| -->
       <router-link to="/about">About</router-link>|
       <router-link to="/skill">Skill</router-link>|
       <router-link to="/travel">Travel</router-link>|
@@ -13,8 +11,6 @@
 </template>
 
 <script>
-// // CSSで作るローディングページ。
-// // https://digipress.info/tech/css-spinner-animation-demo/
 // import Loading from "./components/Loading.vue";
 
 // export default {

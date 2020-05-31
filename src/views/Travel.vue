@@ -1,24 +1,30 @@
 <template>
-  <div class="travel">
-    <h3>今までの旅行先</h3>
-    <div v-for="country in countries" :key="country.index">
+  <div id="travel">
+    <Loading v-show="loading"></Loading>
+    <div class="travel" v-show="!loading">
+      <h3>今までの旅行先</h3>
+      <div v-for="country in countries" :key="country.index">
+        <hr />
+        Abroad: {{ country.name }}
+        <br />
+        Date: {{ country.date }}
+        <br />
+        Purpose: {{ country.purpose }}
+        <br />
+        {{ country.companion }}
+      </div>
       <hr />
-      Abroad: {{ country.name }}
-      <br />
-      Date: {{ country.date }}
-      <br />
-      Purpose: {{ country.purpose }}
-      <br />
-      {{ country.companion }}
     </div>
-    <hr />
   </div>
 </template>
 
 <script>
+import Loading from "../components/Loading.vue";
+
 export default {
   data: function() {
     return {
+      loading: true,
       countries: [
         {
           name: "Australia",
@@ -64,6 +70,12 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    this.loading = false;
+  },
+  components: {
+    Loading
   }
 };
 </script>

@@ -8,11 +8,6 @@
       <span class="awsColor">AWS</span>など
       <span class="pythonColor">Python</span>以外もさわり始めています。
     </p>
-    <!-- <div id="outer" v-on:mouseenter="onmousein" v-on:mouseleave="onmouseout">
-      外(outer)
-      <p id="inner">内(inner)</p>
-    </div>
-    <div v-html="result"></div>-->
   </div>
 </template>
 
@@ -38,15 +33,6 @@ export default {
       result: ""
     };
   }
-  // methods: {
-  //   onmousein: function(e) {
-  //     console.log(e);
-  //     this.result += "Enter:" + e.target.id + "<br />";
-  //   },
-  //   onmouseout: function(e) {
-  //     this.result += "Leave:" + e.target.id + "<br />";
-  //   }
-  // }
 };
 </script>
 
