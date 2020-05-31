@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div id="my-spinner" class="box">
     <!-- type1 〜 type8 はお好みで -->
     <div class="spinner type1">
       <span>Loading...</span>
@@ -7,6 +7,19 @@
   </div>
 </template>
 
+
+
+<script>
+export default {
+  methods: {
+    window: (onload = function() {
+      let spinner = document.getElementById("my-spinner");
+      // .box に .loaded を追加してローディング表示を消す
+      spinner.classList.add("loaded");
+    })
+  }
+};
+</script>
 
 
 <style scoped>
@@ -32,44 +45,65 @@
   transform: translate(-50%, -50%);
   font-size: 12px;
 }
-
-/* Spinner 2 */
-.type2 {
-  border-radius: 50%;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #fff transparent;
-  animation: spinner1_1 2.2s infinite linear forwards;
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  -webkit-transition: all 1.2s ease; /* 1.2秒でフェードアウト */
+  transition: all 1.2s ease;
+  color: #fff; /* ローディングアニメーションカラー */
+  background-color: #333; /* 背景カラー */
 }
 
-.spinner.type2 {
-  border-radius: 50%;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #fff transparent;
-  -webkit-animation: spinner1_1 2.2s infinite linear forwards;
-  animation: spinner1_1 2.2s infinite linear forwards;
-}
-.spinner.type2::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  right: 4px;
-  bottom: 4px;
-  border-radius: 50%;
-  border-width: 4px;
-  border-style: solid;
-  border-color: #fff transparent;
-  animation: spinner1_2 0.8s infinite linear forwards reverse;
-}
-.spinner.type2 span {
-  animation: spinner_loading_text 2.2s infinite linear forwards reverse;
+/* ローディング表示を消すための定義 */
+.box.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-span {
-  animation: spinner_loading_text 2.2s infinite linear forwards reverse;
+/* 1番目のアニメーションの場合 */
+.spinner.type1 {
+  border-radius: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #fff rgba(255, 255, 255, 0.12) rgba(255, 255, 255, 0.12);
+  /* ローディング要素のアニメーションを指定 */
+  -webkit-animation: spinner1_1 1.5s infinite linear forwards;
+  animation: spinner1_1 1.5s infinite linear forwards;
 }
+.spinner.type1 span {
+  /* Loading テキストのアニメーションを指定 */
+  animation: spinner_loading_text 1.5s infinite linear forwards reverse;
+}
+
+/* ローディング要素のアニメーション内容 */
+@-webkit-keyframes spinner1_1 {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes spinner1_1 {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Loading テキストのアニメーション内容 */
 @-webkit-keyframes spinner_loading_text {
   0% {
     opacity: 1;
