@@ -1,3 +1,4 @@
+
 <template>
   <div id="travel">
     <Loading v-show="loading"></Loading>
