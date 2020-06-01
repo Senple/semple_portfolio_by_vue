@@ -12,8 +12,8 @@
         wf_nikukyu:isActive02,
         wf_nicomoji:isActive03}"
       >
-        こんにちは、Sempleです。abcdefghijklmnopqr
-        <br />sfndjhaiofhaeAFJCOAED`VJREFHDZCAS
+        こんにちは、Sempleです。
+        <br />sfndjhai
       </div>
     </section>
 

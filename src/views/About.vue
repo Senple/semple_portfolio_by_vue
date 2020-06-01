@@ -55,6 +55,7 @@ export default {
     console.log("mount start");
     setTimeout(() => {
       this.loading = false;
+      console.log("Loading...");
     }, 3000);
     console.log("mounted");
     // this.loading = false;
