@@ -2,7 +2,7 @@
   <div id="about">
     <Loading v-show="loading"></Loading>
     <div class="about" v-show="!loading">
-      <p>人生は喜劇だ。</p>
+      <p id="header">人生は喜劇だ。</p>
       <h3>今までの軌跡</h3>
       <div v-for="topic in history" :key="topic.index">
         <hr />
@@ -80,3 +80,17 @@ export default {
 //     template: '<div v-if="show"><img src="https://estatesearch.s3-ap-northeast-1.amazonaws.com/img/ajax-loader.gif" >&nbsp;<span v-text="text"></span></div>'
 // });
 </script>
+
+<style scoped>
+#about {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 10vh 1fr 1fr 1fr;
+}
+
+#header {
+  grid-row: 1;
+  grid-column: 1/ 3;
+  background: #8f8;
+}
+</style>
