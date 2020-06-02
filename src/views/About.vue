@@ -12,27 +12,34 @@
           <br />初めての海外ボランティア
         </p>
       </div>
-      <p>人生は喜劇だ。</p>
-      <div id="card2" class="scout card">
-        <!-- <p class="card-left">2018</p> -->
-        <span class="icon">icon</span>
-        <p class="card-left card-text">
-          2018
-          <br />9thAPR Scout Youth Forum
-          <br />Philippine
-          <br />初めての国際会議
-        </p>
-      </div>
+      <p>
+        人生は喜劇だ。
+        <button @click="show = !show">Toggle render</button>
+      </p>
 
-      <div id="card3" class="card">
-        <span class="icon">icon</span>
-        <p class="card-left card-text">
-          2019
-          <br />SPIN2019
-          <br />India
-          <br />初めての国際学会
-        </p>
-      </div>
+      <transition name="fade">
+        <div id="card2" class="scout card" v-if="show">
+          <!-- <p class="card-left">2018</p> -->
+          <span class="icon">icon</span>
+          <p class="card-left card-text">
+            2018
+            <br />9thAPR Scout Youth Forum
+            <br />Philippine
+            <br />初めての国際会議
+          </p>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div id="card3" class="card">
+          <span class="icon">icon</span>
+          <p class="card-left card-text">
+            2019
+            <br />SPIN2019
+            <br />India
+            <br />初めての国際学会
+          </p>
+        </div>
+      </transition>
 
       <div id="card4"></div>
 
@@ -58,6 +65,7 @@ export default {
   data: function() {
     return {
       loading: true,
+      show: false,
       history: [
         {
           // title: "第3回CJKプロジェクト・バングラデシュ派遣",
@@ -171,6 +179,22 @@ p {
 /* .card-text {
   padding-top: 5%;
 } */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 500ms;
+}
+
+/* .fade-leave-active {
+  transition: opacity 3s;
+} */
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px) 2s;
+  opacity: 2s;
+}
 
 /* スマホ版のCSSを設定 */
 @media only screen and (max-width: 480px) {
