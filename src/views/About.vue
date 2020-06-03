@@ -210,8 +210,9 @@ p {
   }
 
   .icon-size {
+    padding-top: 0;
     width: 30px;
-    height: 30px;
+    height: 25px;
   }
   .header {
     padding: 4%;
@@ -220,9 +221,6 @@ p {
   .card {
     padding: 5%;
     margin: 3em 1em;
-  }
-  .card-text {
-    margin-bottom: auto;
   }
 }
 </style>
