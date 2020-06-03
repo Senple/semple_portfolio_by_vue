@@ -4,7 +4,7 @@
     <div id="container" class="about" v-show="!loading">
       <h5 id="header" class="header">今までの軌跡</h5>
       <div id="card1" class="scout card">
-        <span class="icon">icon</span>
+        <b-icon class="icon-size" icon="geo-alt"></b-icon>
         <p class="card-left card-text">
           2016
           <br />3rdCJK-Bangladesh Project
@@ -20,7 +20,9 @@
       <transition name="fade">
         <div id="card2" class="scout card" v-if="show">
           <!-- <p class="card-left">2018</p> -->
-          <span class="icon">icon</span>
+          <span class="icon">
+            <b-icon class="icon-size" icon="people-fill"></b-icon>
+          </span>
           <p class="card-left card-text">
             2018
             <br />9thAPR Scout Youth Forum
@@ -31,7 +33,9 @@
       </transition>
       <transition name="fade">
         <div id="card3" class="card">
-          <span class="icon">icon</span>
+          <span class="icon">
+            <b-icon class="icon-size" icon="clipboard-data"></b-icon>
+          </span>
           <p class="card-left card-text">
             2019
             <br />SPIN2019
@@ -164,21 +168,24 @@ p {
 
 .header {
   padding: 1%;
-  margin: 1em 8em;
+  margin: 1em 16em;
 }
 
 .card {
   padding: 2%;
   margin: 0.5em 8em;
 }
+.icon-size {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  right: 3px;
+}
 
 .card-left {
   text-align: left;
-  /* vertical-align: bottom; */
 }
-/* .card-text {
-  padding-top: 5%;
-} */
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 500ms;
@@ -199,7 +206,12 @@ p {
 /* スマホ版のCSSを設定 */
 @media only screen and (max-width: 480px) {
   p {
-    font-size: 5px;
+    font-size: 12px;
+  }
+
+  .icon-size {
+    width: 30px;
+    height: 30px;
   }
   .header {
     padding: 4%;
@@ -209,8 +221,8 @@ p {
     padding: 5%;
     margin: 3em 1em;
   }
-  /* .card-text {
-    padding-top: 10%;
-  } */
+  .card-text {
+    margin-bottom: auto;
+  }
 }
 </style>
