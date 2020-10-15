@@ -10,11 +10,14 @@
         <v-tab v-for="link in links" :key="link">{{ link }}</v-tab>
       </v-tabs>
 
-      <v-avatar
-        class="hidden-sm-and-down"
-        color="grey darken-1 shrink"
-        size="32"
-      ></v-avatar>
+      <!-- https://qiita.com/sudo5in5k/items/92e759bb024abab5f328 -->
+      <v-btn v-for="website in websites" :key="website" class="mx-4" fab icon>
+        <a v-bind:href="website.link">
+          <v-avatar size="45">
+            <img v-bind:src="website.icon" alt="avatar" />
+          </v-avatar>
+        </a>
+      </v-btn>
     </v-app-bar>
 
     <v-main class="grey lighten-3">
@@ -46,7 +49,24 @@
 <script>
 export default {
   data: () => ({
-    links: ["About", "Skill", "Travel", "Contact"]
+    links: ["About", "Skill", "Travel", "Contact"],
+    websites: [
+      // {
+      //   text: "Twitter",
+      //   link: "https://twitter.com/your_account",
+      //   icon: require("@/assets/twitter-logo.png")
+      // },
+      // {
+      //   text: "Facebook",
+      //   link: "https://www.facebook.com/people/your_account",
+      //   icon: require("@/assets/facebook-logo.png")
+      // },
+      {
+        text: "Github",
+        link: "https://github.com/Senple",
+        icon: require("@/assets/GitHub-Mark-64px.png")
+      }
+    ]
   })
 };
 </script>
